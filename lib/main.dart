@@ -1,8 +1,11 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -116,6 +119,12 @@ class _MyHomePageState extends State<MyHomePage> {
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.grey.shade700),
               child: const Text('Make a query'),
+            ),
+            ElevatedButton(
+              onPressed: (() => imageUpload()),
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.limeAccent.shade700),
+              child: const Text('Upload an Image'),
             ),
           ],
         ),
@@ -319,4 +328,39 @@ void makeQuery() async {
   }
 
   debugPrint('makeQuery FINISHED!');
+}
+
+void imageUpload() async {
+  debugPrint('imageUpload CALLED!');
+
+  final ImagePicker picker = ImagePicker();
+
+  //Uploading image from camera
+  XFile? file = await picker.pickImage(source: ImageSource.camera);
+  //It will save the image name as "images"
+  var imagesRef = FirebaseStorage.instance.ref('users/images');
+  var task = imagesRef.putFile(File(file!.path));
+
+  task.whenComplete(() async {
+    var url = await imagesRef.getDownloadURL();
+    _dbInstance
+        .doc('users/mrktDCH2XTne4t0yZXKF')
+        .update({'imageCameraUrl': url.toString()});
+    debugPrint(url.toString());
+  });
+
+  //Uploading image from gallery
+  // XFile? file = await picker.pickImage(source: ImageSource.gallery);
+  // var imagesRef = FirebaseStorage.instance.ref('users/images');
+  // var task = imagesRef.putFile(File(file!.path));
+
+  // task.whenComplete(() async {
+  //   var url = await imagesRef.getDownloadURL();
+  //   _dbInstance
+  //       .doc('users/mrktDCH2XTne4t0yZXKF')
+  //       .update({'imageGalleryUrl': url.toString()});
+  //   debugPrint(url.toString());
+  // });
+
+  debugPrint('imageUpload FINISHED!');
 }
