@@ -137,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-// dataAdd function that increments the counter
+// dataAdd function that increments the counter when called
 //   void dataAdd() async {
 //     Map<String, dynamic> userMap = {
 //       'name': 'Yunus Emre',
