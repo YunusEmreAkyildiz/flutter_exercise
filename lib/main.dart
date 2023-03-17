@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_exercise/remote_json.dart';
 import 'local_json.dart';
 
 Future<void> main() async {
@@ -41,6 +41,15 @@ class MyHomePage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => const LocalJson()));
               },
               child: const Text('Get local JSON data'),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.yellow.shade600),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const RemoteJson()));
+              },
+              child: const Text('Get remote JSON data'),
             ),
           ],
         ),
