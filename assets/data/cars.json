@@ -1,0 +1,240 @@
+[
+    {
+        "car_brand": "Mercedes-Benz",
+        "country": "Germany",
+        "manufacture_date": 2012,
+        "model": [
+            {
+                "model_name": "A Series",
+                "price": 15000,
+                "diesel": false
+            },
+            {
+                "model_name": "C Series",
+                "price": 25000,
+                "diesel": true
+            }
+        ]
+    },
+    {
+        "car_brand": "Honda",
+        "country": "Japan",
+        "manufacture_date": 2015,
+        "model": [
+            {
+                "model_name": "Civic",
+                "price": 12000,
+                "diesel": false
+            },
+            {
+                "model_name": "Jazz",
+                "price": 10000,
+                "diesel": true
+            }
+        ]
+    },
+    {
+        "car_brand": "Mercedes-Benz",
+        "country": "Germany",
+        "manufacture_date": 2012,
+        "model": [
+            {
+                "model_name": "A Series",
+                "price": 15000,
+                "diesel": false
+            },
+            {
+                "model_name": "C Series",
+                "price": 25000,
+                "diesel": true
+            }
+        ]
+    },
+    {
+        "car_brand": "Hond",
+        "country": "Japan",
+        "manufacture_date": 2015,
+        "model": [
+            {
+                "model_name": "Civic",
+                "price": 12000,
+                "diesel": false
+            },
+            {
+                "model_name": "Jazz",
+                "price": 10000,
+                "diesel": true
+            }
+        ]
+    },
+    {
+        "car_brand": "Mercedes-Benz",
+        "country": "Germany",
+        "manufacture_date": 2012,
+        "model": [
+            {
+                "model_name": "A Series",
+                "price": 15000,
+                "diesel": false
+            },
+            {
+                "model_name": "C Series",
+                "price": 25000,
+                "diesel": true
+            }
+        ]
+    },
+    {
+        "car_brand": "Hond",
+        "country": "Japan",
+        "manufacture_date": 2015,
+        "model": [
+            {
+                "model_name": "Civic",
+                "price": 12000,
+                "diesel": false
+            },
+            {
+                "model_name": "Jazz",
+                "price": 10000,
+                "diesel": true
+            }
+        ]
+    },
+    {
+        "car_brand": "Mercedes-Benz",
+        "country": "Germany",
+        "manufacture_date": 2012,
+        "model": [
+            {
+                "model_name": "A Series",
+                "price": 15000,
+                "diesel": false
+            },
+            {
+                "model_name": "C Series",
+                "price": 25000,
+                "diesel": true
+            }
+        ]
+    },
+    {
+        "car_brand": "Hond",
+        "country": "Japan",
+        "manufacture_date": 2015,
+        "model": [
+            {
+                "model_name": "Civic",
+                "price": 12000,
+                "diesel": false
+            },
+            {
+                "model_name": "Jazz",
+                "price": 10000,
+                "diesel": true
+            }
+        ]
+    },
+    {
+        "car_brand": "Mercedes-Benz",
+        "country": "Germany",
+        "manufacture_date": 2012,
+        "model": [
+            {
+                "model_name": "A Series",
+                "price": 15000,
+                "diesel": false
+            },
+            {
+                "model_name": "C Series",
+                "price": 25000,
+                "diesel": true
+            }
+        ]
+    },
+    {
+        "car_brand": "Hond",
+        "country": "Japan",
+        "manufacture_date": 2015,
+        "model": [
+            {
+                "model_name": "Civic",
+                "price": 12000,
+                "diesel": false
+            },
+            {
+                "model_name": "Jazz",
+                "price": 10000,
+                "diesel": true
+            }
+        ]
+    },
+    {
+        "car_brand": "Mercedes-Benz",
+        "country": "Germany",
+        "manufacture_date": 2012,
+        "model": [
+            {
+                "model_name": "A Series",
+                "price": 15000,
+                "diesel": false
+            },
+            {
+                "model_name": "C Series",
+                "price": 25000,
+                "diesel": true
+            }
+        ]
+    },
+    {
+        "car_brand": "Hond",
+        "country": "Japan",
+        "manufacture_date": 2015,
+        "model": [
+            {
+                "model_name": "Civic",
+                "price": 12000,
+                "diesel": false
+            },
+            {
+                "model_name": "Jazz",
+                "price": 10000,
+                "diesel": true
+            }
+        ]
+    },
+    {
+        "car_brand": "Mercedes-Benz",
+        "country": "Germany",
+        "manufacture_date": 2012,
+        "model": [
+            {
+                "model_name": "A Series",
+                "price": 15000,
+                "diesel": false
+            },
+            {
+                "model_name": "C Series",
+                "price": 25000,
+                "diesel": true
+            }
+        ]
+    },
+    {
+        "car_brand": "Hond",
+        "country": "Japan",
+        "manufacture_date": 2015,
+        "model": [
+            {
+                "model_name": "Civic",
+                "price": 12000,
+                "diesel": false
+            },
+            {
+                "model_name": "Jazz",
+                "price": 10000,
+                "diesel": true
+            }
+        ]
+    }
+]
