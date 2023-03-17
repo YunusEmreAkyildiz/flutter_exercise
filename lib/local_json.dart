@@ -11,25 +11,39 @@ class LocalJson extends StatefulWidget {
 }
 
 class _LocalJsonState extends State<LocalJson> {
+  int _counter = 0;
+  String? _title;
+
+  late final Future<List<CarsModel>> getCarsModel;
+
+  @override
+  void initState() {
+    super.initState();
+    _title = 'Local JSON Processes';
+    getCarsModel = jsonReadCars(); // With this way, whenever build widget is called because of another reason (e.g. title updating), the Future op. will not be done again.
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Local JSON Processes'),
+        title: Text(_title!),
       ),
       body: FutureBuilder<List<CarsModel>>(
-        future: jsonReadCars(),
+        future: getCarsModel,
+        //initialData: [], // We can use this instead of CircularProgressIndicator to fill the screen with data until the data we pull from internet comes.
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<CarsModel> carsList = snapshot.data!;
             return ListView.builder(
                 itemCount: carsList.length,
                 itemBuilder: ((context, index) {
+                  CarsModel indexOfCar = carsList[index];
                   return ListTile(
-                    title: Text(carsList[index].carBrand),
-                    subtitle: Text(carsList[index].country),
+                    title: Text(indexOfCar.carBrand),
+                    subtitle: Text(indexOfCar.country),
                     leading: CircleAvatar(
-                      child: Text(carsList[index].model[0].price.toString()),
+                      child: Text(indexOfCar.model[0].price.toString()),
                     ),
                   );
                 }));
@@ -44,10 +58,20 @@ class _LocalJsonState extends State<LocalJson> {
           }
         },
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            _counter++;
+            _title = 'Local JSON Processes / $_counter';
+          });
+        },
+        child: const Icon(Icons.plus_one),
+      ),
     );
   }
 
   Future<List<CarsModel>> jsonReadCars() async {
+    debugPrint('jsonReadCars CALLED!');
     await Future.delayed(const Duration(seconds: 2)); //To see loading indicator
     try {
       String stringCarsJson = await DefaultAssetBundle.of(context)
@@ -56,8 +80,10 @@ class _LocalJsonState extends State<LocalJson> {
       List<CarsModel> allCars = (jsonArray as List)
           .map((carsMap) => CarsModel.fromMap(carsMap))
           .toList();
+      debugPrint('jsonReadCars RETURNED NORMAL!');
       return allCars;
     } catch (e) {
+      debugPrint('jsonReadCars RETURNED WITH ERROR!');
       return Future.error(e.toString());
     }
   }
